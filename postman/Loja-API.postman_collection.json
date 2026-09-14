@@ -1,0 +1,214 @@
+{
+  "info": {
+    "name": "Loja API - Cliente / Produto / Pedido",
+    "description": "Collection para testar o CRUD da API REST do desafio final (Spring Boot + H2).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Criar cliente",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana Souza\",\n  \"email\": \"ana@email.com\"\n}"
+            },
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Listar clientes",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes"
+          }
+        },
+        {
+          "name": "Buscar cliente por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes/1"
+          }
+        },
+        {
+          "name": "Buscar cliente por nome",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes/nome/Ana"
+          }
+        },
+        {
+          "name": "Contar clientes",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/clientes/count"
+          }
+        },
+        {
+          "name": "Atualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Ana Souza Silva\",\n  \"email\": \"ana.silva@email.com\"\n}"
+            },
+            "url": "{{baseUrl}}/api/clientes/1"
+          }
+        },
+        {
+          "name": "Excluir cliente",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/clientes/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Produtos",
+      "item": [
+        {
+          "name": "Criar produto",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teclado\",\n  \"preco\": 150.00\n}"
+            },
+            "url": "{{baseUrl}}/api/produtos"
+          }
+        },
+        {
+          "name": "Listar produtos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/produtos"
+          }
+        },
+        {
+          "name": "Buscar produto por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/produtos/1"
+          }
+        },
+        {
+          "name": "Buscar produto por nome",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/produtos/nome/Teclado"
+          }
+        },
+        {
+          "name": "Contar produtos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/produtos/count"
+          }
+        },
+        {
+          "name": "Atualizar produto",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teclado Mecanico\",\n  \"preco\": 280.00\n}"
+            },
+            "url": "{{baseUrl}}/api/produtos/1"
+          }
+        },
+        {
+          "name": "Excluir produto",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/produtos/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pedidos",
+      "item": [
+        {
+          "name": "Criar pedido",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/pedidos"
+          }
+        },
+        {
+          "name": "Listar pedidos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pedidos"
+          }
+        },
+        {
+          "name": "Buscar pedido por ID",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pedidos/1"
+          }
+        },
+        {
+          "name": "Buscar pedidos por nome do cliente",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pedidos/cliente/Ana"
+          }
+        },
+        {
+          "name": "Buscar pedidos por nome do produto",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pedidos/produto/Teclado"
+          }
+        },
+        {
+          "name": "Contar pedidos",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/pedidos/count"
+          }
+        },
+        {
+          "name": "Atualizar pedido",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1\n}"
+            },
+            "url": "{{baseUrl}}/api/pedidos/1"
+          }
+        },
+        {
+          "name": "Excluir pedido",
+          "request": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/pedidos/1"
+          }
+        }
+      ]
+    }
+  ]
+}
